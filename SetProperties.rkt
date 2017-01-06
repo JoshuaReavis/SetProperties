@@ -5,6 +5,7 @@
 
 #lang racket
 
+; Checks a set to see if it has the reflexive property
 (define reflexive (λ(L S)
                     (cond ((null? S) #t) ;we've gone through everything and haven't returned false yet means it's true
                           (else
@@ -20,7 +21,8 @@
                              (else
                               (reflexhelper e (cdr L))
                               ))))
-
+                              
+; Checks a set to see if it has the symmetric property
 (define symmetric (λ(L)
                     (symmetrichelpercaller L L) ; since the lab defines that symmetric only has one input parameter, we need another function to keep track of our pairs
                     ))
@@ -40,6 +42,8 @@
                                  (symmetrichelpercaller  (cdr P) L))
                                 ))
                           )))
+                          
+; Checks a set to see if it has the transitive property
 (define transitive (λ(L)
                     (transitivehelpercaller L L) ; since the lab defines that transitive only has one input parameter, we need another function to keep track of our pairs
                     ))
@@ -69,7 +73,8 @@
                                  (transitivehelpercaller  (cdr P) L))
                                 ))
                           )))
-
+                          
+; Checks a set to see if it has the antitransitive property
 (define antitransitive (λ(L)
                     (antitransitivehelpercaller L L) ; since the lab defines that antitransitive only has one input parameter, we need another function to keep track of our pairs
                     ))
@@ -101,6 +106,7 @@
                           )))
                     
 
+;Test cases I have made which should all result in true.
 ;(reflexive '( (1 . 2) (1 . 1) (2 . 2) (3 . 3) ) '(1 2 3))
 ;(symmetric '( (1 . 2) (3 . 2) (2 . 3) (2 . 1) (5 . 5)) )
 ;(transitive '( (1 . 2) (2 . 3) (1 . 3) ) )
