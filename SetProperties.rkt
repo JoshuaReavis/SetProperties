@@ -1,5 +1,4 @@
 ; Josh Reavis
-; CSCI 301 Formal Languages and Functional Programming
 ; Summer 2016
 
 
